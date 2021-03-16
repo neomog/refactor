@@ -1,16 +1,4 @@
-
-import React, {useState} from 'react';
-// import axios from 'axios';
-import Header from "../../layout/Header";
-import Property from "./Rent";
-import SearchProperties from "./SearchRent";
-import next from "./next.png";
-import prev from "./prev.png"
-import { Link } from "react-router-dom";
-
-
-function Rents() {
-    const [property, setProperty] = useState([ {
+[ {
         "userId": 1,
         "id": 1,
         "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
@@ -63,48 +51,4 @@ function Rents() {
         "id": 9,
         "title": "nesciunt iure omnis dolorem tempora et accusantium",
         "body": "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas"
-      }]);
-
-    // useEffect(() => {
-    //     axios.get("https://jsonplaceholder.typicode.com/posts");
-
-
-    // })
-            
-    return (
-        <div className="property-container">
-            <Header />
-            <div className="mainContainer search-form">
-                <SearchProperties />
-                <div className="view-container">
-                  <div className="left">
-                    <p className="redText boldText">Properties for sale</p>
-                  </div>
-
-                  <div className="right">
-                    <a href="#" className="redText">View all Properties for sale <img src={next}/></a>
-                  </div>
-                  
-                </div>
-            </div>
-            <section  
-            className="mainContainer property-style">
-                {property.map(item => (
-                   <Property item={item}/>
-                ))}
-            </section>
-
-            <div className="row rent">
-              <div className="cols">
-                <a href="/property"><img src={prev} alt="prev" /></a>
-
-                <a href="/property"><img src={next} alt="next" /></a>
-              </div>
-                      
-                    
-            </div>
-        </div>
-    )
-}
-
-export default Rents
+      }]

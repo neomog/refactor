@@ -2,14 +2,15 @@ import React from 'react';
 import location from "./section5/location.png";
 import phone from "./section5/phone.png";
 import message from "./section5/message.png";
+import { Link } from "react-router-dom";
 
 function Section5() {
     return (
-        <div  className="section5 container">
-            <section className="section5Row">
+        <div  className="section5">
+            <section className="section5Row  container">
                 <div>
                     <p>Ready to get started?</p>
-                    <button>Get started</button>
+                    <Link to="/contact"><button>Get started</button></Link>
                 </div>
 
                 <div>

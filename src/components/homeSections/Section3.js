@@ -25,7 +25,8 @@ function Section3() {
                         <img src={two} alt="two" />
                         <p className="boldText">Consulting service</p>
                         <p>with over 1 million houses for sale, including houses you won’t find anywhere else</p>
-                        <button>Talk to us</button>
+                        <Link to="/consult-us"><button>Talk to us</button></Link>
+                        
                     </div>
 
                     <div>

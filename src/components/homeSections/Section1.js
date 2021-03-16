@@ -8,9 +8,9 @@ import search from "./section1/search.png";
 
 function Section1() {
     return (
-        <div className="section1 container">
-            <section className="row">
-                <div className="column padding">
+        <div className="section1 bg-danger">
+            <section className="row container">
+                <div className="col column padding">
                     <h4>Let's find a home that's perfect for you</h4>
                     <p>Search properties for rent or sale in Oyo state</p>
                     <span>
@@ -22,7 +22,7 @@ function Section1() {
                     
                 </div>
 
-                <div className="column padding2 section1imggrid">
+                <div className="col padding2 section1imggrid">
                     <img src={one} alt="one" className="item1" />
                     <img src={dots} alt="dots" className="dots" />
                     <img src={two} alt="two" className="item2" />

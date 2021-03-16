@@ -4,70 +4,22 @@ import React, {useState, useEffect} from 'react';
 import Header from "../../layout/Header";
 import Land from "./Land";
 import SearchLands from "./SearchLands";
-import next from "./next.png"
+import next from "./next.png";
+import prev from "./prev.png";
+import data from "./pics/db.json";
+import { Link } from "react-router-dom";
 
 
-function Lands() {
-    const [property, setProperty] = useState([ {
-        "userId": 1,
-        "id": 1,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-      },
-      {
-        "userId": 1,
-        "id": 2,
-        "title": "qui est esse",
-        "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
-      },
-      {
-        "userId": 1,
-        "id": 3,
-        "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-        "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
-      },
-      {
-        "userId": 1,
-        "id": 4,
-        "title": "eum et est occaecati",
-        "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
-      },
-      {
-        "userId": 1,
-        "id": 5,
-        "title": "nesciunt quas odio",
-        "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
-      },
-      {
-        "userId": 1,
-        "id": 6,
-        "title": "dolorem eum magni eos aperiam quia",
-        "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
-      },
-      {
-        "userId": 1,
-        "id": 7,
-        "title": "magnam facilis autem",
-        "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
-      },
-      {
-        "userId": 1,
-        "id": 8,
-        "title": "dolorem dolore est ipsam",
-        "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae"
-      },
-      {
-        "userId": 1,
-        "id": 9,
-        "title": "nesciunt iure omnis dolorem tempora et accusantium",
-        "body": "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas"
-      }]);
+const Lands = () => {
 
-    // useEffect(() => {
-    //     axios.get("https://jsonplaceholder.typicode.com/posts");
+  const [land, setLand] = useState([]);
+    
 
+  useEffect(() => {
+      
+    setLand(data);
 
-    // })
+    })
             
     return (
         <div className="property-container">
@@ -87,12 +39,72 @@ function Lands() {
             </div>
             <section  
             className="mainContainer property-style">
-                {property.map(item => (
+                {land.map(item => (
                    <Land item={item}/>
                 ))}
-            </section>
+        </section>
+        
+        <div className="row rent">
+              <div className="cols">
+                <a href="/property"><img src={prev} alt="prev" /></a>
+
+                <a href="/property"><img src={next} alt="next" /></a>
+              </div>
+                      
+                    
+            </div>
         </div>
     )
 }
 
+
+// const data = [
+//   {
+//     "userId": 1,
+//     "id": 1,
+//     "image": require("./land1.png"),
+//     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+//     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+//     "link": "More details"
+//   },
+//   {
+//     "userId": 1,
+//     "id": 2,
+//     "image": require("./land2.png"),
+//     "title": "qui est esse",
+//     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+//     "link": "More details"
+//   },
+//   {
+//     "userId": 1,
+//     "id": 3,
+//     "image": require("./land3.png"),
+//     "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+//     "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+//     "link": "More details"
+//   },
+//   {
+//     "userId": 1,
+//     "id": 4,
+//     "image": require("./land4.png"),
+//     "title": "eum et est occaecati",
+//     "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+//   },
+//   {
+//     "userId": 1,
+//     "id": 5,
+//     "image": require("./land5.png"),
+//     "title": "nesciunt quas odio",
+//     "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+//   },
+//   {
+//     "userId": 1,
+//     "id": 6,
+//     "image": require("./land6.png"),
+//     "title": "dolorem eum magni eos aperiam quia",
+//     "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
+//   }
+// ]
+
+// export default data;
 export default Lands

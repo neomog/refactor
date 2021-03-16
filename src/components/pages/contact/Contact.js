@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from "../../layout/Header";
 import location from "../contactIcons/location.png";
 import message from "../contactIcons/message.png";
@@ -7,25 +7,45 @@ import whatsapp from "../contactIcons/whatsapp.png";
 import "./form.css";
 
 const Contact = () => {
+    const [contactInput, setContactInput] = useState({
+        name: "",
+        mail: "",
+        message: ""
+    });
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+
+        setContactInput({ ...contactInput, [e.target.name]: value });
+
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(contactInput);
+        setContactInput("");
+    }
+
+
     return (
         <div>
             <div>
                 <Header />
                 <div style={contactHero}>
-                        <p>Get in Touchlllaa</p>
+                        <p>Get in Touch</p>
                         <p>Fill up the form and our team will get back to you within 24 hours</p>
                 </div>
-                <div className="mainContainer">
-                    <form className="flex-one">
-                        <p>Contact form</p>
+                <div className="mainContainer contact">
+                    <form className="flex-one" onSubmit={handleSubmit}>
+                        <p className="redText boldText">Contact form</p>
                         <label for="name">Your name</label>
-                        <input type="text" />
+                        <input type="text" name="name" value={contactInput.name} onChange={handleChange} />
 
                         <label for="mail">Your Email address</label>
-                        <input type="mail" />
+                        <input type="mail" name="mail" value={contactInput.mail} onChange={handleChange}  />
 
                         <label for="text">Message</label>
-                        <textarea className="textarea" />
+                        <textarea className="textarea" name="message" value={contactInput.message} onChange={handleChange}  />
 
                         <input type="submit" value="Send Message" />
                     </form>

@@ -10,7 +10,7 @@ const SearchProperties = () => {
 
             <input type="text" name="price" placeholder="Enter max price" />
             
-            <button>Search<img src={search}/></button>
+            <button>Search<img src={search} alt="" /></button>
         </form>
 
     )

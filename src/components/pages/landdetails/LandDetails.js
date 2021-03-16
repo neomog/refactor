@@ -36,6 +36,7 @@ const LandDetails = () => {
                     </div>
 
                     <div>
+                        <button className="details-btn1">Visit location</button> <button className="details-btn2">Request via email</button>
                         <p className="boldText">About this Apartment</p>
                         <p>Readily available and comfortable to accommodate you. Located in an easily accessible area within the beautiful metropolis of Ibadan.</p>
                         <p className="boldText">More Details</p>

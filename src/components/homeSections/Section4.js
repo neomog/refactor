@@ -3,7 +3,7 @@ import one from "./section4/one.png";
 
 function Section4() {
     return (
-        <div  className="section4 container">
+        <div  className="section4 mainContainer">
             <section className="row">
                 <div className="column">
                     <img src={one} alt="one" />

@@ -1,34 +1,51 @@
-import React from 'react';
+import React, { useState } from "react"
+// import Modal from 'react-bootstrap/Modal';
 import "./form.css"
-import {Link} from "react-router-dom";
 
-const RequestForm = () => {
+const RequestForm = ({id, modalOpen, onClose}) => {
+    const [userInput, setUserInput] = useState({
+        name: "",
+        number: "",
+        email: "",
+        date: "",
+        text: ""
+    });
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        const name = e.target.name;
+        setUserInput({ ...userInput, [name]: value })
+    }
+
+    const { name, number, email, date, text } = userInput
+
     return (
-        <div className="mainrequestformcontainer">
-             <div className="formcontainer">
-                    <div>
-                        <h3>Request to visit a location</h3>
-                    </div>
+        <div className="modal-background">
+            <div className="modal-container">    
+                <form>
+                    <div className="close-modal-btn"><button onClick={onClose}>x</button></div>
+                    <div className="modal-title"><p>Request to visit a location</p></div>
 
-                    <form>
-                                <label for="fname">Name</label>
-                                <input type="text" id="fname" name="firstname" placeholder="Enter your first and last name" />
+                    <label for="name">name</label>
+                    <input type="text" name="name" value={name} placeholder="Enter your first and last name" />
 
-                                <label for="number">Phone Number</label>
-                                <input type="number" placeholder="Kindly enter your phone number" />
+                    {/* <label for="name">name</label>
+                    <input type="text" name="name" value="userInput.name" placeholder="Enter your first and last name" /> */}
 
-                                <label for="mail">Gmail</label>
-                                <input type="mail" placeholder="Kindly enter your gmail" />
+                    <label for="number">Phone number</label>
+                    <input type="number" name="number" value={number} onChange={handleChange} placeholder="Kindly enter your mobile number" />
 
-                                <label for="date">Pick a suitable date</label>
-                                <input type="date" />
+                    <label for="email">Email</label>
+                    <input type="email" name="email" value={email} onChange={handleChange} placeholder="Kindly enter your email" />
 
-                                <label for="message">Message</label>
-                                <textarea className="textarea" />
+                    <label for="date">Pick a suitable date</label>
+                    <input type="date" name="date" onChange={handleChange} value={date} />
 
-                            
-                                <input type="submit" value="Submit" />
-                            </form>
+                    <label for="message">Message</label>
+                    <textarea className="textarea" name="message" onChange={handleChange} value={text} />
+                    
+                    <input type="submit" value="Submit" />
+                </form>
 
                             
             </div>

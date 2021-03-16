@@ -5,8 +5,8 @@ import location from "./section2/location.png";
 
 function Section2() {
     return (
-        <div className="section2 container">
-             <section className="row">
+        <div className="section2 bg-light">
+            <section className="row container bg-light">
                 <div className="column section2Image">
                     <img  src={one} alt="one" />
                     <img src={home} alt="home" className="section2Icon1" />

@@ -5,8 +5,8 @@ import instagram from "./section6/instagram.png";
 
 function Section6() {
     return (
-        <div className="section6 container">
-            <section className="six">
+        <div className="section6">
+            <section className="six container">
                 <div style={{float: "left"}}><a href="#">Terms & Conditions</a>     <a href="#">Privacy Policy</a></div>
 
                 <div style={{float: "right"}}>
